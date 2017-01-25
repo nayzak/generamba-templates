@@ -1,0 +1,19 @@
+{% include 'header' %}
+
+import ReactiveKit
+
+extension {{ module_info.name }} {
+
+  struct RouterOutput { }
+
+  class Router {
+
+    var output: RouterOutput {
+      return RouterOutput()
+    }
+    
+    func bind(to input: RouterInput) {
+    }
+  }
+
+}

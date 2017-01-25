@@ -1,0 +1,30 @@
+{% include 'header' %}
+
+import UIKit
+import ReactiveKit
+import Bond
+
+extension {{ module_info.name }} {
+
+  struct ViewOutput { }
+
+  typealias View = {{ module_info.name }}View
+}
+
+extension {{ module_info.name }}.View {
+
+  typealias ViewInput =  {{ module_info.name }}.ViewInput
+  typealias ViewOutput = {{ module_info.name }}.ViewOutput
+
+  var output: ViewOutput {
+    return ViewOutput(
+    )
+  }
+
+  func bind(to input: ViewInput) {
+  }
+  
+}
+
+class {{ module_info.name }}View: ViewController {
+}
