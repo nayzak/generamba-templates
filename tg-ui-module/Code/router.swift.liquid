@@ -6,14 +6,21 @@ extension {{ module_info.name }} {
 
   struct RouterOutput { }
 
-  class Router {
+  class Router: BaseRouter {
+
+    private weak var viewController: UIViewController?
+    private let modulesLoaders: ModulesLoaders
+
+    init(viewController: UIViewController, modulesLoaders: ModulesLoaders) {
+      self.viewController = viewController
+      self.modulesLoaders = modulesLoaders
+    }
 
     var output: RouterOutput {
       return RouterOutput()
     }
     
-    func bind(to input: RouterInput) {
-    }
+    func bind(to input: RouterInput) { }
   }
 
 }

@@ -2,15 +2,11 @@
 
 extension {{ module_info.name }} {
 
-  public typealias Services = (
-  )
-  public typealias ModulesLoaders = (
-  )
+  public typealias Services = ()
+  public typealias ModulesLoaders = ()
   public typealias Dependencies = (services: Services, modulesLoaders: ModulesLoaders)
-  public typealias Input = (
-  )
-  public typealias Output = (
-  )
+  public typealias Input = ()
+  public typealias Output = ()
   public typealias Module = (view: Presentable, output: Output)
   public typealias Loader = (Input) -> Module
 
@@ -21,8 +17,9 @@ public struct {{ module_info.name }} {
   public static func loader(_ deps: Dependencies) -> Loader {
     return { (input: Input) -> Module in
       let view = View()
-      let router = Router()
-      let controller = Controller(input: input, viewOutput: view.output,
+      let router = Router(viewController: view, modulesLoaders: deps.ModulesLoaders)
+      view.retain(router)
+      let controller = Controller(input: input, viewOutput: view.output, 
                                   routerOutput: router.output, deps: deps)
       view.bind(to: controller.viewInput)
       router.bind(to: controller.routerInput)
