@@ -4,12 +4,16 @@ import UIKit
 import ReactiveKit
 import Bond
 
+// PRAGMA MARK: ViewOutput Declaration
+
 extension {{ module_info.name }} {
 
   struct ViewOutput { }
 
   typealias View = {{ module_info.name }}View
 }
+
+// PRAGMA MARK: View Bindings
 
 extension {{ module_info.name }}.View {
 
@@ -23,5 +27,7 @@ extension {{ module_info.name }}.View {
   func bind(to input: ViewInput) { }
   
 }
+
+// PRAGMA MARK: View Implementation
 
 class {{ module_info.name }}View: ViewController { }
