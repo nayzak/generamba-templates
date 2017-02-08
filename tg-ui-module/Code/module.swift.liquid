@@ -19,8 +19,12 @@ public struct {{ module_info.name }} {
       let view = View()
       let router = Router(viewController: view, modulesLoaders: deps.modulesLoaders)
       view.retain(router)
-      let controller = Controller(input: input, viewOutput: view.output, 
-                                  routerOutput: router.output, deps: deps)
+      let controller = Controller(
+        input: input, 
+        viewOutput: view.output, 
+        routerOutput: router.output, 
+        deps: deps
+      )
       view.bind(to: controller.viewInput)
       router.bind(to: controller.routerInput)
       return (view, controller.output)
