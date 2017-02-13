@@ -6,7 +6,7 @@ extension {{ module_info.name }} {
 
   struct RouterOutput { }
 
-  class Router: BaseRouter {
+  final class Router: BaseRouter {
 
     private weak var viewController: UIViewController?
     private let modulesLoaders: ModulesLoaders
