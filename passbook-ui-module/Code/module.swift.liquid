@@ -12,7 +12,7 @@ extension {{ module_info.name }} {
 
 }
 
-public struct {{ module_info.name }} {
+public enum {{ module_info.name }} {
 
   public static func loader(_ deps: Dependencies) -> Loader {
     return { (input: Input) -> Module in
@@ -20,9 +20,9 @@ public struct {{ module_info.name }} {
       let router = Router(viewController: view, modulesLoaders: deps.modulesLoaders)
       view.retain(router)
       let controller = Controller(
-        input: input, 
-        viewOutput: view.output, 
-        routerOutput: router.output, 
+        input: input,
+        viewOutput: view.output,
+        routerOutput: router.output,
         deps: deps
       )
       view.bind(to: controller.viewInput)
