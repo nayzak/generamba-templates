@@ -1,0 +1,19 @@
+{% include 'header' %}
+
+extension {{ module_info.name }} {
+
+  struct Controller {
+
+    let viewInput: ViewInput
+    let routerInput: RouterInput
+    let output: Output
+
+    init(input: Input, viewOutput: ViewOutput, routerOutput: RouterOutput, deps: Dependencies) {
+      let interactor = Interactor(services: deps.services)
+      self.viewInput = ViewInput()
+      self.routerInput = RouterInput()
+      self.output = Output()
+    }
+  }
+
+}

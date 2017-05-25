@@ -1,0 +1,23 @@
+# Template information section
+name: passbook-ui-module
+summary: Template for UI module for Passbook iOS application. Template contains view (based on UIViewController), router, controller, interactor and assembly.
+author: Ian Kazlauskas
+version: 1.0.0
+license: MIT
+
+# The declarations for code files
+code_files:
+
+- {name: .swift, path: Code/module.swift.liquid}
+- {name: Controller.swift, path: Code/controller.swift.liquid}
+- {name: Interactor.swift, path: Code/interactor.swift.liquid}
+- {name: Router.swift, path: Code/router.swift.liquid}
+- {name: RouterInput.swift, path: Code/router-input.swift.liquid}
+- {name: View.swift, path: Code/view.swift.liquid}
+- {name: View.xib, path: Code/view.xib.liquid}
+- {name: ViewInput.swift, path: Code/view-input.swift.liquid}
+
+# Template dependencies
+dependencies:
+- ReactiveKit
+- Bond
